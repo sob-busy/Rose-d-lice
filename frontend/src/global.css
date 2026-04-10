@@ -1,0 +1,136 @@
+// ============================================
+// Fichier CSS Global
+// ============================================
+// Styles globaux pour l'application Rose Délice
+// Animation smoothe, typographie, et thème couleur
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Variables CSS personnalisées pour les couleurs
+ */
+:root {
+  /* Palette Rose Délice */
+  --rose-powder: #F4D4E6;
+  --rose-light: #F9E7F0;
+  --rose-medium: #E8B4D0;
+  --rose-dark: #D4A5C8;
+  --cream: #FFF8F3;
+  
+  /* Autres couleurs */
+  --text-dark: #2C2C2C;
+  --text-light: #666666;
+  --gold: #D4AF37;
+  
+  /* Animations */
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/**
+ * Styles de base pour l'application
+ */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/**
+ * Titre principal - Playfair Display
+ */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+}
+
+/**
+ * Animations fluides avec Framer Motion
+ */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity var(--transition-smooth);
+}
+
+.slide-up {
+  animation: slideUp var(--transition-smooth) ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Boutons génériques
+ */
+button {
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 212, 230, 0.3);
+}
+
+/**
+ * Liens
+ */
+a {
+  color: var(--rose-dark);
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--rose-medium);
+}
+
+/**
+ * Scrollbar personnalisée
+ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rose-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rose-dark);
+}
+
+/**
+ * Effet de focus pour l'accessibilité
+ */
+*:focus-visible {
+  outline: 2px solid var(--rose-dark);
+  outline-offset: 2px;
+}
